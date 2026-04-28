@@ -111,12 +111,30 @@
             visibility: hidden;
         }
 
+        .loader-name {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            text-align: center;
+            width: 100%;
+            padding: 0 20px;
+        }
+
         .loader-glitch {
-            font-size: 4rem;
+            font-size: clamp(1.8rem, 8vw, 4rem);
             font-weight: 700;
             position: relative;
             color: #fff;
-            letter-spacing: 10px;
+            letter-spacing: clamp(4px, 1.5vw, 10px);
+            text-align: center;
+            display: block;
+            white-space: nowrap;
+        }
+
+        .loader-glitch.loader-sub {
+            font-size: clamp(1.2rem, 5.3vw, 2.67rem);
+            letter-spacing: clamp(3px, 1vw, 8px);
         }
 
         .loader-glitch::before,
@@ -1038,7 +1056,10 @@
     <div class="vignette"></div>
 
     <div id="loader">
-        <div class="loader-glitch" data-text="BALAMITHRAN">BALAMITHRAN</div>
+        <div class="loader-name">
+            <span class="loader-glitch" data-text="BALAMITHRAN">BALAMITHRAN</span>
+            <span class="loader-glitch loader-sub" data-text="SARAVANAN">SARAVANAN</span>
+        </div>
         <div class="loader-bar">
             <div class="loader-progress"></div>
         </div>
