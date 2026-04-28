@@ -290,6 +290,36 @@
             color: #fff;
             letter-spacing: -2px;
             margin-top: -10px;
+            text-align: center;
+            position: relative;
+            display: block;
+        }
+
+        .glitch-subtitle::before,
+        .glitch-subtitle::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-bg);
+        }
+
+        .glitch-subtitle::before {
+            animation: hero-glitch-1 3s infinite;
+            color: var(--neon-pink);
+            z-index: -1;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+            transform: translate(-2px, -2px);
+        }
+
+        .glitch-subtitle::after {
+            animation: hero-glitch-2 3s infinite;
+            color: var(--neon-cyan);
+            z-index: -2;
+            clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+            transform: translate(2px, 2px);
         }
 
         .glitch-title::before,
@@ -1049,7 +1079,7 @@
             <div class="hero-badge">ASSOCIATE DATA ENGINEER</div>
             <div>
                 <h1 class="glitch-title" data-text="BALAMITHRAN">BALAMITHRAN</h1>
-                <div class="glitch-subtitle">Saravanan</div>
+                <div class="glitch-subtitle" data-text="Saravanan">Saravanan</div>
             </div>
             <p class="hero-subtitle" id="heroSubtitle"></p>
             <div class="hero-stats">
