@@ -280,8 +280,16 @@
             line-height: 0.9;
             text-align: center;
             position: relative;
-            display: inline-block;
+            display: block;
             letter-spacing: -5px;
+        }
+
+        .glitch-subtitle {
+            font-size: clamp(2rem, 6vw, 5rem);
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: -2px;
+            margin-top: -10px;
         }
 
         .glitch-title::before,
@@ -1039,7 +1047,10 @@
     <div class="content-wrapper">
         <section class="hero" id="about">
             <div class="hero-badge">ASSOCIATE DATA ENGINEER</div>
-            <h1 class="glitch-title" data-text="BALAMITHRAN">BALAMITHRAN</h1>
+            <div>
+                <h1 class="glitch-title" data-text="BALAMITHRAN">BALAMITHRAN</h1>
+                <div class="glitch-subtitle">Saravanan</div>
+            </div>
             <p class="hero-subtitle" id="heroSubtitle"></p>
             <div class="hero-stats">
                 <div class="hero-stat">
@@ -1081,14 +1092,15 @@
                         <div class="card-role">Associate Data Engineer</div>
                         <div class="card-content">
                             <ul class="achievement-list">
-                                <li>Built data warehousing and ETL pipelines using Python, SQL, and Snowflake with SCD Type 1 & Type 2 implementation</li>
-                                <li>Developed NL2SQL movie analytics chatbot using LangChain + Gemini 2.0 + BigQuery for natural-language data querying</li>
-                                <li>Built LLM-driven migration accelerator converting Informatica IICS mappings to production-ready Snowflake dbt pipelines</li>
-                                <li>Created metadata preprocessing framework reducing mapping JSON size by 72%, optimizing prompt input from 4.1M to 698K tokens</li>
-                                <li>Automated layered dbt architectures (Bronze–Silver–Snapshot–Gold) with sources.yml, macros, and validation models</li>
+                                <li><strong>Data Pipeline Architecture:</strong> Built scalable ETL pipelines using Python, SQL, and Snowflake with SCD Type 1 & Type 2 implementation for historical data tracking</li>
+                                <li><strong>AI-Powered Analytics:</strong> Developed NL2SQL movie analytics chatbot using LangChain + Gemini 2.0 + BigQuery enabling natural-language data exploration for business users</li>
+                                <li><strong>Migration Acceleration:</strong> Built LLM-driven migration accelerator converting Informatica IICS mappings to production-ready Snowflake dbt pipelines with configuration-driven prompts</li>
+                                <li><strong>Cost Optimization:</strong> Created metadata preprocessing framework reducing mapping JSON size by 72%, optimizing prompt input from 4.1M to 698K tokens</li>
+                                <li><strong>Automation:</strong> Automated layered dbt architectures (Bronze–Silver–Snapshot–Gold) with sources.yml, macros, SCD snapshots, and dbt-expectations validation</li>
                             </ul>
-                            <span class="metric-tag">72% Size Reduction</span>
-                            <span class="metric-tag">50% Cost Savings</span>
+                            <span class="metric-tag">📊 72% Size Reduction</span>
+                            <span class="metric-tag">💰 50% Cost Savings</span>
+                            <span class="metric-tag">⚡ 4.1M → 698K Tokens</span>
                         </div>
                     </div>
                 </div>
@@ -1099,7 +1111,7 @@
             <h2 class="section-title">Featured Projects</h2>
             <div class="project-showcase">
                 <div class="project-card">
-                    <div class="project-visual">📊</div>
+                    <div class="project-visual">🏗️</div>
                     <div class="project-info">
                         <div class="project-name">CortexStream Analytics</div>
                         <div class="project-desc">AI-powered review intelligence platform using Medallion Architecture with Snowflake Cortex for sentiment analysis and NL2SQL analytics.</div>
@@ -1112,7 +1124,7 @@
                 </div>
 
                 <div class="project-card">
-                    <div class="project-visual" style="background: linear-gradient(135deg, rgba(255, 0, 110, 0.1), rgba(131, 56, 236, 0.1));">💬</div>
+                    <div class="project-visual" style="background: linear-gradient(135deg, rgba(255, 0, 110, 0.1), rgba(131, 56, 236, 0.1));">🤖</div>
                     <div class="project-info">
                         <div class="project-name">NL2SQL Movie Analytics Chatbot</div>
                         <div class="project-desc">Conversational chatbot enabling natural-language data exploration with LangChain, Google Gemini 2.0, and BigQuery integration.</div>
@@ -1125,7 +1137,7 @@
                 </div>
 
                 <div class="project-card">
-                    <div class="project-visual" style="background: linear-gradient(135deg, rgba(255, 190, 11, 0.1), rgba(255, 0, 110, 0.1));">⚙️</div>
+                    <div class="project-visual" style="background: linear-gradient(135deg, rgba(255, 190, 11, 0.1), rgba(255, 0, 110, 0.1));">🚀</div>
                     <div class="project-info">
                         <div class="project-name">IICS → dbt Migration Accelerator</div>
                         <div class="project-desc">LLM-based migration tool with configuration-driven prompts and MCP metadata extraction for automated pipeline generation.</div>
@@ -1200,7 +1212,7 @@
         </section>
 
         <section class="section">
-            <h2 class="section-title">Education</h2>
+            <h2 class="section-title">Education & Academics</h2>
             <div class="holo-grid">
                 <div class="holo-card">
                     <div class="card-glow"></div>
@@ -1210,8 +1222,37 @@
                     </div>
                     <div class="card-role">M.Tech Integrated – Computer Science</div>
                     <div class="card-content">
-                        <p style="color: rgba(255,255,255,0.7);"><strong>CGPA: 9.12/10.0</strong></p>
-                        <p style="color: rgba(255,255,255,0.7); margin-top: 10px;">Sri Krishna College of Engineering and Technology</p>
+                        <p style="color: rgba(255,255,255,0.9); font-weight: 600; font-size: 1.1rem;"><strong>CGPA: 9.12/10.0</strong></p>
+                        <p style="color: rgba(255,255,255,0.7); margin-top: 8px;">Sri Krishna College of Engineering and Technology</p>
+                        <p style="color: rgba(255,255,255,0.6); margin-top: 12px; font-size: 0.9rem;">Specialized in advanced data engineering concepts and system design</p>
+                    </div>
+                </div>
+
+                <div class="holo-card">
+                    <div class="card-glow"></div>
+                    <div class="card-header">
+                        <div class="card-company" style="font-size: 1.3rem;">HSC</div>
+                        <div class="card-date">2018 - 2020</div>
+                    </div>
+                    <div class="card-role">Higher Secondary Certificate</div>
+                    <div class="card-content">
+                        <p style="color: rgba(255,255,255,0.9); font-weight: 600; font-size: 1.1rem;"><strong>86.3%</strong></p>
+                        <p style="color: rgba(255,255,255,0.7); margin-top: 8px;">CK School of Practical Knowledge</p>
+                        <p style="color: rgba(255,255,255,0.6); margin-top: 12px; font-size: 0.9rem;">Strong foundation in mathematics and science</p>
+                    </div>
+                </div>
+
+                <div class="holo-card">
+                    <div class="card-glow"></div>
+                    <div class="card-header">
+                        <div class="card-company" style="font-size: 1.3rem;">SSLC</div>
+                        <div class="card-date">2017 - 2018</div>
+                    </div>
+                    <div class="card-role">Secondary School Leaving Certificate</div>
+                    <div class="card-content">
+                        <p style="color: rgba(255,255,255,0.9); font-weight: 600; font-size: 1.1rem;"><strong>94.6%</strong></p>
+                        <p style="color: rgba(255,255,255,0.7); margin-top: 8px;">CK School of Practical Knowledge</p>
+                        <p style="color: rgba(255,255,255,0.6); margin-top: 12px; font-size: 0.9rem;">Excellent academic performance with distinction</p>
                     </div>
                 </div>
             </div>
