@@ -1076,6 +1076,18 @@
             </div>
         </section>
 
+        <section class="section" id="about-profile" style="padding-top: 0;">
+            <div class="holo-card" style="max-width: 900px; margin: 0 auto;">
+                <div class="card-glow"></div>
+                <div style="position: relative; z-index: 1;">
+                    <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--neon-cyan); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px;">// Profile</div>
+                    <p style="color: rgba(255,255,255,0.85); line-height: 1.8; font-size: 1rem;">
+                        Associate Data Engineer experienced in building <strong>Snowflake</strong> and <strong>BigQuery analytics pipelines</strong> using SQL, Python, dbt, and Airflow. Contributed to an <strong>LLM-based IICS → dbt migration accelerator</strong>, reducing metadata size by 72% and improving conversion efficiency. Hands-on with <strong>NL2SQL systems</strong>, <strong>Snowflake Cortex</strong>, and secure ingestion pipelines using Google DLP. Strong exposure to scalable enterprise data engineering workflows.
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <section class="section" id="experience">
             <h2 class="section-title">Experience</h2>
             <div class="timeline-container">
@@ -1092,14 +1104,16 @@
                         <div class="card-role">Associate Data Engineer</div>
                         <div class="card-content">
                             <ul class="achievement-list">
-                                <li><strong>Data Pipeline Architecture:</strong> Built scalable ETL pipelines using Python, SQL, and Snowflake with SCD Type 1 & Type 2 implementation for historical data tracking</li>
-                                <li><strong>AI-Powered Analytics:</strong> Developed NL2SQL movie analytics chatbot using LangChain + Gemini 2.0 + BigQuery enabling natural-language data exploration for business users</li>
-                                <li><strong>Migration Acceleration:</strong> Built LLM-driven migration accelerator converting Informatica IICS mappings to production-ready Snowflake dbt pipelines with configuration-driven prompts</li>
-                                <li><strong>Cost Optimization:</strong> Created metadata preprocessing framework reducing mapping JSON size by 72%, optimizing prompt input from 4.1M to 698K tokens</li>
-                                <li><strong>Automation:</strong> Automated layered dbt architectures (Bronze–Silver–Snapshot–Gold) with sources.yml, macros, SCD snapshots, and dbt-expectations validation</li>
+                                <li><strong>ETL Pipelines:</strong> Built data warehousing and ETL pipelines using Python, SQL, and Snowflake, including SCD Type 1 &amp; Type 2 implementation</li>
+                                <li><strong>SQL Transformations:</strong> Built and optimized SQL transformations and applied MERGE-based logic for historical data processing</li>
+                                <li><strong>AI-Powered Analytics:</strong> Supported development of NL2SQL movie analytics chatbot (LangChain + Gemini 2.0 + BigQuery) for natural-language data querying</li>
+                                <li><strong>Secure Ingestion:</strong> Integrated API-based ingestion pipelines including Google DLP, and collaborated with senior engineers on pipeline optimization and debugging</li>
+                                <li><strong>Migration Accelerator:</strong> Built LLM-driven accelerator to convert Informatica IICS mappings into production-ready Snowflake dbt pipelines using MCP-based metadata extraction</li>
+                                <li><strong>Cost Optimization:</strong> Developed metadata preprocessing framework reducing mapping JSON size by 72%, optimizing prompt input from 4.1M to 698K tokens and lowering LLM cost by 50%</li>
+                                <li><strong>Automation:</strong> Automated layered dbt architectures (Bronze–Silver–Snapshot–Gold) including sources.yml, macros, SCD Type-2 snapshots, and validation models via dbt-audit-helper and dbt-expectations</li>
                             </ul>
                             <span class="metric-tag">📊 72% Size Reduction</span>
-                            <span class="metric-tag">💰 50% Cost Savings</span>
+                            <span class="metric-tag">💰 50% LLM Cost Savings</span>
                             <span class="metric-tag">⚡ 4.1M → 698K Tokens</span>
                         </div>
                     </div>
@@ -1114,11 +1128,12 @@
                     <div class="project-visual">🏗️</div>
                     <div class="project-info">
                         <div class="project-name">CortexStream Analytics</div>
-                        <div class="project-desc">AI-powered review intelligence platform using Medallion Architecture with Snowflake Cortex for sentiment analysis and NL2SQL analytics.</div>
+                        <div class="project-desc">Built end-to-end Medallion Architecture (Bronze–Silver–Gold) pipeline ingesting customer review data from AWS S3 via Snowpipe. Applied Snowflake Cortex for sentiment analysis, summarization, and NL2SQL-enabled analytics datasets for BI reporting.</div>
                         <div class="project-stats">
                             <span class="project-stat">Snowflake</span>
+                            <span class="project-stat">Snowpipe</span>
+                            <span class="project-stat">Cortex</span>
                             <span class="project-stat">AWS S3</span>
-                            <span class="project-stat">BI Reporting</span>
                         </div>
                     </div>
                 </div>
@@ -1127,24 +1142,12 @@
                     <div class="project-visual" style="background: linear-gradient(135deg, rgba(255, 0, 110, 0.1), rgba(131, 56, 236, 0.1));">🤖</div>
                     <div class="project-info">
                         <div class="project-name">NL2SQL Movie Analytics Chatbot</div>
-                        <div class="project-desc">Conversational chatbot enabling natural-language data exploration with LangChain, Google Gemini 2.0, and BigQuery integration.</div>
+                        <div class="project-desc">Developed a conversational NL2SQL analytics chatbot using LangChain and Google Gemini integrated with BigQuery, implementing prompt guardrails and conversation memory for safe multi-turn natural-language data exploration.</div>
                         <div class="project-stats">
                             <span class="project-stat" style="color: var(--neon-pink);">Python</span>
                             <span class="project-stat" style="color: var(--neon-pink);">LangChain</span>
+                            <span class="project-stat" style="color: var(--neon-pink);">Gemini 2.0</span>
                             <span class="project-stat" style="color: var(--neon-pink);">BigQuery</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-visual" style="background: linear-gradient(135deg, rgba(255, 190, 11, 0.1), rgba(255, 0, 110, 0.1));">🚀</div>
-                    <div class="project-info">
-                        <div class="project-name">IICS → dbt Migration Accelerator</div>
-                        <div class="project-desc">LLM-based migration tool with configuration-driven prompts and MCP metadata extraction for automated pipeline generation.</div>
-                        <div class="project-stats">
-                            <span class="project-stat" style="color: var(--neon-yellow);">LLM</span>
-                            <span class="project-stat" style="color: var(--neon-yellow);">dbt</span>
-                            <span class="project-stat" style="color: var(--neon-yellow);">Automation</span>
                         </div>
                     </div>
                 </div>
@@ -1155,11 +1158,10 @@
             <h2 class="section-title">Technical Arsenal</h2>
             <div class="skills-matrix">
                 <div class="skill-category">
-                    <div class="skill-title">Programming Languages</div>
+                    <div class="skill-title">Programming</div>
                     <div class="skill-tags">
                         <span class="skill-tag">Python</span>
                         <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">dbt</span>
                     </div>
                 </div>
 
@@ -1173,9 +1175,18 @@
                 </div>
 
                 <div class="skill-category">
-                    <div class="skill-title">Transformation & Orchestration</div>
+                    <div class="skill-title">Transformation</div>
                     <div class="skill-tags">
-                        <span class="skill-tag">dbt</span>
+                        <span class="skill-tag">dbt Models</span>
+                        <span class="skill-tag">dbt Snapshots</span>
+                        <span class="skill-tag">dbt Macros</span>
+                        <span class="skill-tag">dbt Tests</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-title">Orchestration & Streaming</div>
+                    <div class="skill-tags">
                         <span class="skill-tag">Airflow</span>
                         <span class="skill-tag">Kafka</span>
                     </div>
@@ -1187,25 +1198,17 @@
                         <span class="skill-tag">Snowflake Cortex</span>
                         <span class="skill-tag">LangChain</span>
                         <span class="skill-tag">NL2SQL</span>
-                        <span class="skill-tag">Google Gemini</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <div class="skill-title">Tools & Platforms</div>
+                    <div class="skill-title">Tools</div>
                     <div class="skill-tags">
                         <span class="skill-tag">Git</span>
                         <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Cursor</span>
                         <span class="skill-tag">VS Code</span>
                         <span class="skill-tag">PyCharm</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="skill-title">Certifications</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Snowpro Core</span>
-                        <span class="skill-tag">Snowflake Associate</span>
                     </div>
                 </div>
             </div>
@@ -1354,9 +1357,10 @@
 
         const heroSubtitle = document.getElementById('heroSubtitle');
         const phrases = [
-            'Building scalable data pipelines.',
-            'Transforming data into insights.',
-            'Crafting efficient ETL architectures.'
+            'Building Snowflake & BigQuery analytics pipelines.',
+            'Crafting LLM-based data migration accelerators.',
+            'Hands-on with NL2SQL & Snowflake Cortex.',
+            'Reducing metadata size by 72% with smart preprocessing.'
         ];
 
         let currentPhrase = 0;
