@@ -1,0 +1,24 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node
+node_modules/
+npm-debug.log
+
+# Dependencies
+venv/
+env/
+__pycache__/
+
+# Build
+dist/
+build/
+*.egg-info/
