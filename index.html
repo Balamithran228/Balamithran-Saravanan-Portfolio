@@ -630,8 +630,6 @@
         .timeline-item {
             position: relative;
             margin-bottom: 60px;
-            opacity: 0;
-            transform: translateX(-50px);
         }
 
         .timeline-dot {
@@ -1485,30 +1483,140 @@
             }
         });
 
-        gsap.utils.toArray('.timeline-item').forEach((item) => {
-            gsap.to(item, {
-                scrollTrigger: {
-                    trigger: item,
-                    start: 'top 80%',
-                    once: true,
-                },
+        // --- Section titles: slide from left + neon line sweep ---
+        gsap.utils.toArray('.section-title').forEach((title) => {
+            gsap.from(title, {
+                scrollTrigger: { trigger: title, start: 'top 88%', once: true },
+                duration: 0.9,
+                x: -80,
+                opacity: 0,
+                ease: 'power3.out'
+            });
+        });
+
+        // --- Profile bio card: scale + fade from below ---
+        gsap.from('#about-profile .holo-card', {
+            scrollTrigger: { trigger: '#about-profile', start: 'top 85%', once: true },
+            duration: 1,
+            y: 60,
+            opacity: 0,
+            scale: 0.95,
+            ease: 'power3.out'
+        });
+
+        // --- Timeline items: slide from left, staggered ---
+        gsap.utils.toArray('.timeline-item').forEach((item, i) => {
+            gsap.from(item, {
+                scrollTrigger: { trigger: item, start: 'top 85%', once: true },
+                duration: 0.9,
+                x: -100,
+                opacity: 0,
+                delay: i * 0.15,
+                ease: 'power3.out',
+                onComplete: () => {
+                    item.style.opacity = 1;
+                    item.style.transform = 'none';
+                }
+            });
+        });
+
+        // --- Project cards: staggered 3-D flip-in from bottom ---
+        gsap.utils.toArray('.project-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: { trigger: '#projects', start: 'top 80%', once: true },
                 duration: 0.8,
-                opacity: 1,
-                x: 0,
+                y: 100,
+                opacity: 0,
+                rotateX: 15,
+                scale: 0.9,
+                delay: i * 0.2,
+                ease: 'back.out(1.4)'
+            });
+        });
+
+        // --- Skill categories: staggered rise from below ---
+        gsap.utils.toArray('.skill-category').forEach((cat, i) => {
+            gsap.from(cat, {
+                scrollTrigger: { trigger: '#skills', start: 'top 80%', once: true },
+                duration: 0.7,
+                y: 60,
+                opacity: 0,
+                delay: i * 0.1,
                 ease: 'power2.out'
             });
         });
 
-        gsap.utils.toArray('.holo-card').forEach((card) => {
-            gsap.to(card, {
-                scrollTrigger: {
-                    trigger: card,
-                    start: 'top 80%',
-                    once: true,
-                },
+        // --- Individual skill tags: pop in with scale burst ---
+        gsap.utils.toArray('.skill-tag').forEach((tag, i) => {
+            gsap.from(tag, {
+                scrollTrigger: { trigger: tag, start: 'top 92%', once: true },
+                duration: 0.4,
+                scale: 0,
+                opacity: 0,
+                delay: (i % 6) * 0.06,
+                ease: 'back.out(2)'
+            });
+        });
+
+        // --- Education / holo-cards: staggered from right ---
+        gsap.utils.toArray('.holo-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: { trigger: card, start: 'top 88%', once: true },
+                duration: 0.8,
+                x: 80,
+                opacity: 0,
+                delay: i * 0.12,
+                ease: 'power3.out'
+            });
+        });
+
+        // --- Metric tags in experience: fade up in sequence ---
+        gsap.utils.toArray('.metric-tag').forEach((tag, i) => {
+            gsap.from(tag, {
+                scrollTrigger: { trigger: tag, start: 'top 92%', once: true },
+                duration: 0.5,
+                y: 20,
+                opacity: 0,
+                delay: i * 0.15,
+                ease: 'power2.out'
+            });
+        });
+
+        // --- Hero stats: count-up numbers ---
+        gsap.utils.toArray('.hero-stat-value').forEach((el) => {
+            const raw = el.textContent.trim();
+            const num = parseFloat(raw.replace(/[^0-9.]/g, ''));
+            const suffix = raw.replace(/[0-9.]/g, '');
+            if (isNaN(num)) return;
+            gsap.from({ val: 0 }, {
+                scrollTrigger: { trigger: el, start: 'top 90%', once: true },
+                val: num,
+                duration: 1.8,
+                ease: 'power2.out',
+                onUpdate: function () {
+                    el.textContent = (Number.isInteger(num)
+                        ? Math.round(this.targets()[0].val)
+                        : this.targets()[0].val.toFixed(2)) + suffix;
+                }
+            });
+        });
+
+        // --- Contact section: zoom + glow reveal ---
+        gsap.from('.contact-cta', {
+            scrollTrigger: { trigger: '.contact-section', start: 'top 75%', once: true },
+            duration: 1.2,
+            scale: 0.85,
+            opacity: 0,
+            ease: 'power3.out'
+        });
+
+        gsap.utils.toArray('.contact-link').forEach((link, i) => {
+            gsap.from(link, {
+                scrollTrigger: { trigger: '.contact-section', start: 'top 70%', once: true },
                 duration: 0.6,
-                opacity: 1,
-                y: 0,
+                y: 40,
+                opacity: 0,
+                delay: 0.3 + i * 0.15,
                 ease: 'power2.out'
             });
         });
